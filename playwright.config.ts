@@ -4,13 +4,13 @@ export default defineConfig({
   testDir: './tests',
   timeout:  30*1000,      
   expect: { timeout: 5000 }, 
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: true,                  // run in headless mode
+    headless: false,                  // run in headless mode
     baseURL: 'https://playwright.dev/',  // default base url
     trace: 'on-first-retry',         // collect trace only on retry
     screenshot: 'on',   // capture screenshots on failure
