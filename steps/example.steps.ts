@@ -14,6 +14,7 @@ When('clicks the login button', async function () {
   console.log('👉 User clicks login button');
 });
 
-Then('the user should be redirected to the dashboard page', async function () {
-  console.log('👉 User is redirected to dashboard');
-});
+Then('the user should be redirected to the dashboard page', function () {
+  console.log('👉 should be redirected to the dashboard');
+    });
+
