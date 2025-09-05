@@ -1,20 +1,16 @@
 import { Given, When, Then } from '@cucumber/cucumber';
+import HomePage from '../pages/HomePage';
+import { page } from '../Util/Hooks';
 
-console.log("✅ example.steps.ts loaded");
+let homePage: HomePage
 
 Given('the user is on the login page', async function () {
-  console.log('👉 User is on the login page');
+  homePage = new HomePage(page);
+  await homePage.navigate();
 });
 
 When('the user enters valid credentials', async function () {
-  console.log('👉 User enters valid credentials');
+  await homePage.closeLoginModal();
+  await homePage.pageLoaded();
 });
-
-When('clicks the login button', async function () {
-  console.log('👉 User clicks login button');
-});
-
-Then('the user should be redirected to the dashboard page', function () {
-  console.log('👉 should be redirected to the dashboard');
-    });
 

@@ -11,7 +11,7 @@ export default defineConfig({
   reporter: 'html',
   use: {
     headless: false,                  // run in headless mode
-    baseURL: 'https://playwright.dev/',  // default base url
+    baseURL: 'https://www.makemytrip.com/',  // default base url
     trace: 'on-first-retry',         // collect trace only on retry
     screenshot: 'on',   // capture screenshots on failure
     video: 'retain-on-failure',      // keep video only if failed

@@ -1,13 +1,26 @@
-import { After, Before } from "@cucumber/cucumber";
-import { BrowserContext, Page } from "playwright";
+import { After, AfterAll, Before, BeforeAll } from "@cucumber/cucumber";
+import { Browser, BrowserContext, chromium, Page } from "playwright";
 
-let context: BrowserContext;
-let page: Page;
+export let context: BrowserContext;
+export let browser : Browser;
+export let page : Page;
 
-Before(async function (scenario) {
-    console.log(`****Starting Scenario: ${scenario.pickle.name}****`)
+BeforeAll(async () => {
+    browser = await chromium.launch({ headless: false, slowMo: 50 });
 })
 
-After(async function (scenario) {
-    console.log('****Ending Scenario****')
+AfterAll(async () => {
+    await browser.close();
+})
+
+Before(async () => {
+    context = await browser.newContext();
+    page = await context.newPage();
+    page.setDefaultTimeout(60000);
+    page.setDefaultNavigationTimeout(60000);
+})
+
+After(async () => {
+    await page.close();
+    await context.close();
 })
