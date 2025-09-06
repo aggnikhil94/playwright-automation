@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
  "scripts": {
-  "test:bdd": "cucumber-js"
+  "test:bdd": "npx cucumber-js",
+  "test:debug": "npx cucumber-js --config cucumber.js"
 },
   "keywords": [],
   "author": "",

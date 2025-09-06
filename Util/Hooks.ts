@@ -1,12 +1,13 @@
 import { After, AfterAll, Before, BeforeAll } from "@cucumber/cucumber";
 import { Browser, BrowserContext, chromium, Page } from "playwright";
+import config from "../playwright.config";
 
 export let context: BrowserContext;
 export let browser : Browser;
 export let page : Page;
 
 BeforeAll(async () => {
-    browser = await chromium.launch({ headless: false, slowMo: 50 });
+    browser = await chromium.launch(config.use);
 })
 
 AfterAll(async () => {
@@ -14,10 +15,8 @@ AfterAll(async () => {
 })
 
 Before(async () => {
-    context = await browser.newContext();
+    context = await browser.newContext(config.use);
     page = await context.newPage();
-    page.setDefaultTimeout(60000);
-    page.setDefaultNavigationTimeout(60000);
 })
 
 After(async () => {

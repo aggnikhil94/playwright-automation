@@ -9,7 +9,8 @@ Given('the user is on the login page', async function () {
   await homePage.navigate();
 });
 
-When('the user enters valid credentials', async function () {
+When('the user enters valid credentials', {timeout: -1} , async function () {
+    await page.pause();
   await homePage.closeLoginModal();
   await homePage.pageLoaded();
 });

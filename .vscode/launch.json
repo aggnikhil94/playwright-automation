@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Dubug Playwright Tests",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/@playwright/test/lib/cli/index.js",
+            "console": "integratedTerminal",
+            "args": [
+                "test",
+                "--project=chromium",
+                "--headed",
+                "--debug"
+            ],
+        }
+    ]
+}
