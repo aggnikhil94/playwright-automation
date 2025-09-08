@@ -1,18 +1,23 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Dubug Playwright Tests",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceFolder}/node_modules/@playwright/test/lib/cli/index.js",
-            "console": "integratedTerminal",
-            "args": [
-                "test",
-                "--project=chromium",
-                "--headed",
-                "--debug"
-            ],
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Cucumber Tests",
+      "program": "${workspaceFolder}/node_modules/@cucumber/cucumber/bin/cucumber-js",
+      "args": [
+        "--require-module", "ts-node/register",
+        "--require", "steps/**/*.ts",
+        "features/login.feature:4",
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "runtimeArgs": ["--inspect-brk"],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ]
 }

@@ -6,6 +6,8 @@ export default class HomePage {
     private loginModalCloseBtn = "//span[@data-cy = 'closeModal']";
     private companyLogo = "//a[@data-cy = 'mmtLogo']";
     private oneWayBtn = "//li[@data-cy = 'oneWayTrip' and @class = 'selected']";
+    private searchFlightBtn = "//a[text()='Search']";
+
 
     async closeLoginModal() {
         if(await this.page.locator(this.loginModalCloseBtn).isVisible()){
@@ -21,4 +23,9 @@ export default class HomePage {
         await expect(this.page.locator(this.companyLogo)).toBeVisible();
         await expect(this.page.locator(this.oneWayBtn)).toBeVisible();
     }
+
+    async clickSearchFlight() {
+        await this.page.locator(this.searchFlightBtn).click();
+    }
+    
 }
