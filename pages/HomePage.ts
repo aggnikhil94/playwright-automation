@@ -1,4 +1,5 @@
 import { expect, Page } from "@playwright/test";
+import { waitForText } from "../Util/waitUtils";
 
 export default class HomePage {
     constructor(private page: Page) {}
@@ -20,6 +21,7 @@ export default class HomePage {
     }
 
     async pageLoaded() {
+        await waitForText(this.page.locator(this.oneWayBtn), 'One Way', 10000);
         await expect(this.page.locator(this.companyLogo)).toBeVisible();
         await expect(this.page.locator(this.oneWayBtn)).toBeVisible();
     }
