@@ -2,11 +2,13 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import HomePage from '../pages/HomePage';
 import { page } from '../Util/Hooks';
 import FlightSearchPage from '../pages/FlightSearchPage';
+import { captureBrowserConsole } from '../Util/debugUtils';
 
 let homePage: HomePage
 let flightSearchPage: FlightSearchPage;
 
 Given('the user is on the login page', async function () {
+  captureBrowserConsole(page);
   homePage = new HomePage(page);
   await homePage.navigate();
 });

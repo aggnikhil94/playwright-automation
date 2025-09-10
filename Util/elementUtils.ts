@@ -7,7 +7,6 @@ export async function clickElement(locator: Locator, timeout: number = 5000) {
 }
 
 export async function typeText(locator: Locator, text: string, delay: number = 0) {
-    await locator
     await locator.fill('');
     await locator.pressSequentially(text, {delay});
 }
