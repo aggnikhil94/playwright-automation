@@ -24,8 +24,8 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome']    , viewport: { width: 1280, height: 720 }},
+      name: 'firefox',
+      use: { browserName: 'firefox', viewport: { width: 1280, height: 720 }},
     },
   ],
 });

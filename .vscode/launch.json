@@ -9,7 +9,7 @@
       "args": [
         "--require-module", "ts-node/register",
         "--require", "steps/**/*.ts",
-        "features/login.feature:4",
+        "features/login.feature",
       ],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
