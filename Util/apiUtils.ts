@@ -7,7 +7,7 @@ export async function getUsers(page: number = 2) {
  if (!response.ok()) {
     const errorText = await response.text();
     throw new Error(
-      `Failed API Call: ${response.status()} ${response.statusText()}\nResponse: ${errorText}`
+      `Failed API Calls: ${response.status()} ${response.statusText()}\nResponse: ${errorText}`
     );
   }
     return response.json();
