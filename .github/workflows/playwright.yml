@@ -28,4 +28,4 @@ jobs:
        run: npx playwright install --with-deps
 
      - name: Run Cucumber Tests
-       run: npm run test:bdd:reports
+       run: npm run test:bdd:report
