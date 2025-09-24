@@ -20,5 +20,8 @@
     "multiple-cucumber-html-reporter": "^3.9.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "csv-parse": "^6.1.0"
   }
 }

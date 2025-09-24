@@ -10,8 +10,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: false,                  // run in headless mode
-    baseURL: 'https://www.makemytrip.com/',  // default base url
+    headless: true,                  // run in headless mode
+    baseURL: 'https://reqres.in/api',  // default base url
     launchOptions: {
                      // slow down by 50ms
     },

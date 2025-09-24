@@ -1,17 +1,17 @@
 import { request, APIRequestContext } from "@playwright/test";
 
 let apiContext: APIRequestContext;
-
+export let baseURL = 'https://reqres.in/api';
 export async function initApiContext(): Promise<APIRequestContext> {
     if (!apiContext) {
         apiContext = await request.newContext({
-            baseURL: 'https://reqres.in/api',
+            baseURL,
             extraHTTPHeaders: {
                 'Accept': 'application/json'
             }
         });
     }
-
+    console.log("Base URL in use:", baseURL);
     return apiContext;
 }
 

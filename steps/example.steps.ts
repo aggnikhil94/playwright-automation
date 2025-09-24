@@ -10,10 +10,9 @@ import { waitForPageLoad } from '../Util/waitUtils';
 let homePage: HomePage
 let flightSearchPage: FlightSearchPage;
 
-Given('the user is on the login page', async function (username: string) {
+Given('the user is on the login page', async function () {
   // homePage = new HomePage(page);
   // await homePage.navigate();
-  console.log(username);
 });
 
 // When('the user enters valid credentials', {timeout: -1} , async function () {
@@ -47,11 +46,11 @@ Given('the user is on the login page', async function (username: string) {
 
    Then('user is on flight search page', async function () {
 
-  // const body = await getUsers();
-  // console.log(body);
-  // expect(body.data.length).toBeGreaterThan(0);
-  // expect(body.data[0]).toHaveProperty('id');
-  // expect(body.data[0]).toHaveProperty('email');
-  // expect(body.data[0]).toHaveProperty('first_name');
-  // expect(body.data[0]).toHaveProperty('last_name');
+  const body = await getUsers();
+  console.log(body);
+  expect(body.data.length).toBeGreaterThan(0);
+  expect(body.data[0]).toHaveProperty('id');
+  expect(body.data[0]).toHaveProperty('email');
+  expect(body.data[0]).toHaveProperty('first_name');
+  expect(body.data[0]).toHaveProperty('last_name');
   });
