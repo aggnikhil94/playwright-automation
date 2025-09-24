@@ -1,9 +1,11 @@
 Feature: Login
 
-@smoke 
-  Scenario: Successful login
-    Given the user is on the login page
+@smoke
+  Scenario Outline: Scenario Outline name: Successful login
+    Given the user is on the login page "<username>"
     Then user is on flight search page
+    Examples:
+        | read ('data\playwright.csv') |
 
 # @sanity 
 #   Scenario: Successful login

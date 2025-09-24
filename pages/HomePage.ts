@@ -1,5 +1,6 @@
 import { expect, Page } from "@playwright/test";
 import { waitForText } from "../Util/waitUtils";
+import { clickElement } from "../Util/elementUtils";
 
 export default class HomePage {
     constructor(private page: Page) {}
@@ -14,7 +15,8 @@ export default class HomePage {
 
     async closeLoginModal() {
         if(await this.page.locator(this.loginModalCloseBtn).isVisible()){
-            await this.page.locator(this.loginModalCloseBtn).click();
+            clickElement(this.page.locator(this.loginModalCloseBtn),10000);
+            //await this.page.locator(this.loginModalCloseBtn).click();
         }
     }
 

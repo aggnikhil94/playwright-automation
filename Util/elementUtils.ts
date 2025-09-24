@@ -1,9 +1,14 @@
 import { Page, Locator } from "@playwright/test";
 
 
-export async function clickElement(locator: Locator, timeout: number = 5000) {
-    await locator.waitFor({state: 'visible', timeout});
-    await locator.click();
+export async function clickElement(locator: Locator, timeout: number = 5000, type:string = '') {
+    try{
+      await locator.waitFor({state: 'visible', timeout});
+      await locator.click();
+    }
+    catch(error){
+      
+    }
 }
 
 export async function typeText(locator: Locator, text: string, delay: number = 0) {

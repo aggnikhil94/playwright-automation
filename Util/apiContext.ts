@@ -5,7 +5,7 @@ let apiContext: APIRequestContext;
 export async function initApiContext(): Promise<APIRequestContext> {
     if (!apiContext) {
         apiContext = await request.newContext({
-            baseURL: 'https://reqres.in',
+            baseURL: 'https://reqres.in/api',
             extraHTTPHeaders: {
                 'Accept': 'application/json'
             }
